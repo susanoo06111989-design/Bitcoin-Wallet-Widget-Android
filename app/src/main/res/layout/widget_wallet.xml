@@ -1,9 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp" android:background="@drawable/widget_bg">
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-  <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="₿  BITCOIN WALLET" android:textColor="#F7931A" android:textStyle="bold" android:textSize="17sp"/>
-  <TextView android:id="@+id/refresh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⟳ Refresh" android:textColor="#FFFFFF" android:padding="4dp"/>
- </LinearLayout>
- <TextView android:id="@+id/balance" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open app to configure" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="23sp" android:paddingTop="9dp"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="12dp" android:background="@drawable/widget_bg">
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="$  BITCOIN WALLET" android:textColor="#33D67A" android:textStyle="bold" android:textSize="17sp"/>
+ <TextView android:id="@+id/balance" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Loading wallet..." android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="22sp" android:paddingTop="6dp"/>
  <TextView android:id="@+id/fiat" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="USD / BRL" android:textColor="#DDDDDD" android:textSize="14sp"/>
- <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Not updated" android:textColor="#AAAAAA" android:textSize="12sp" android:paddingTop="7dp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="bottom" android:orientation="horizontal">
+  <TextView android:id="@+id/status" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Updating..." android:textColor="#AAAAAA" android:textSize="11sp" android:maxLines="2"/>
+  <ImageView android:id="@+id/refresh" android:layout_width="52dp" android:layout_height="52dp" android:padding="7dp" android:src="@drawable/ic_refresh" android:contentDescription="Refresh balance" android:clickable="true"/>
+ </LinearLayout>
 </LinearLayout>
