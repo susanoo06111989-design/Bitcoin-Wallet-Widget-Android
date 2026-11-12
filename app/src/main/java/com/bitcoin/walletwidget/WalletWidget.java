@@ -19,6 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class WalletWidget extends AppWidgetProvider {
+ static final String WALLET_ADDRESS="bc1qsdrffv3fmwzwhrvueejcfy264k5mshkmu9c82z";
  private static final String ACTION_REFRESH="com.bitcoin.walletwidget.REFRESH";
  private static final ExecutorService EXEC=Executors.newSingleThreadExecutor();
  @Override public void onUpdate(Context context,AppWidgetManager manager,int[] ids){refresh(context);}
@@ -29,7 +30,7 @@ public class WalletWidget extends AppWidgetProvider {
  static void refresh(Context context){
   Context app=context.getApplicationContext();
   EXEC.execute(()->{
-   String address=app.getSharedPreferences("wallet",0).getString("address","");
+   String address=WALLET_ADDRESS;
    if(address.isEmpty()){render(app,"Set wallet address","Open the app","No address configured");return;}
    try {
     JSONObject stats=getJson("https://mempool.space/api/address/"+address);
